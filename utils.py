@@ -1,6 +1,6 @@
 import openai
 import re
-openai.api_key = ''
+openai.api_key = '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'
 
 def get_completion(complete_prompt: str, model="gpt-3.5-turbo") -> str:
     messages = [{"role": "user", "content": complete_prompt}]
