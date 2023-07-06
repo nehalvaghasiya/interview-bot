@@ -25,7 +25,7 @@ The installation steps are different for different OS.
 
 ### Linux:
 
-\```bash
+```bash
 python3.8 --version
 apt install python3.8-venv
 python3 -m venv myenv
@@ -33,36 +33,36 @@ source myenv/bin/activate
 pip install -r requirements.txt
 export OPENAI_API_KEY=<your secret key>
 streamlit run chatbot.py
-\```
+```
 
 ### Windows:
 
-\```bash
+```bash
 python3.8 -m venv myenv
 myenv\Scripts\activate
 pip install -r requirements.txt
 export OPENAI_API_KEY=<your secret key>
 streamlit run chatbot.py
-\```
+```
 
 ### Mac:
 
-\```bash
+```bash
 python3.8 -m venv myenv
 source myenv/bin/activate
 pip install -r requirements.txt
 export OPENAI_API_KEY=<your secret key>
 streamlit run chatbot.py
-\```
+```
 
 ## Directory Tree
-
+```
 .
 ├── chatbot.py
 ├── utils.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ## Bug / Feature Request
 If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/YOUR_USERNAME/PROJECT/issues/new) by including your search query and the expected result.
