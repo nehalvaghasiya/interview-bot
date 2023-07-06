@@ -97,4 +97,4 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ## Technologies Used
 
-<img src="images/openai.png" width="125"/><img src="images/streamlit.jpg" width="200"/> 
+<img src="images/openai.png" width="125"/><img src="images/streamlit.jpg" width="210"/> 
