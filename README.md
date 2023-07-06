@@ -4,6 +4,7 @@
 - Overview
 - Technical Aspect
 - Installation
+- Troubleshooting
 - Directory Tree
 - Bug / Feature Request
 - Technologies Used
@@ -17,7 +18,7 @@ The Interview Chatbot project is primarily divided into two parts:
 1. The generation of job-specific interview questions.
 2. Evaluation of the candidate's responses to the questions.
 
-Both tasks are accomplished using OpenAI's GPT-4 language model. The project uses Streamlit to create a simple and user-friendly web interface for the chatbot.
+Both tasks are accomplished using OpenAI's GPT-3.5 language model. The project uses Streamlit to create a simple and user-friendly web interface for the chatbot.
 
 ## Installation
 
@@ -54,6 +55,27 @@ pip install -r requirements.txt
 export OPENAI_API_KEY=<your secret key>
 streamlit run chatbot.py
 ```
+
+Remember to replace `<your secret key>` with your actual OpenAI API Key.
+
+
+## Troubleshooting
+
+If you encounter errors while installing the dependencies from `requirements.txt`, try installing the packages individually using the following commands:
+
+```bash
+pip install openai
+pip install streamlit
+pip install streamlit-chat
+```
+
+Then, export your OpenAI API Key and run the chatbot:
+```bash
+export OPENAI_API_KEY=<your secret key>
+streamlit run chatbot.py
+```
+Remember to replace `<your secret key>` with your actual OpenAI API Key.
+
 
 ## Directory Tree
 ```
