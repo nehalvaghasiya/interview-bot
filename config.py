@@ -1,6 +1,23 @@
 class Parameters:
-    questions_prompt = "Job description: {job_description}\nBased on the given job description, kindly formulate two relevant interview questions with max 20 words each. These questions should aim to assess the candidate's competency for the job role. Ask one question at a time. Do not generate unnecessary texts except the questions. "
-    evaluation_prompt =  """Job description: {job_description}\n\nQuestion-Answers:\n{interview_text}\n\nAs an AI interview assistant, you have been tasked to evaluate the candidate's responses. Based on the answers provided, determine whether the candidate is suitable for the role specified in the job description. Bear in mind to gauge the authenticity and completeness of their responses. If any inaccuracies or significant omissions are observed, you have to reject the candidate tactfully and you have to say the words "Sorry, we can not hire you.", ensuring your communication remains courteous and respectful. """
+    questions_prompt = "Job description: {job_description}\nBased on the given job description, kindly formulate five relevant interview questions with max 20 words each. These questions should aim to assess the candidate's competency for the job role. Ask one question at a time. Do not generate unnecessary texts except the questions. "
+    evaluation_prompt = """
+                        Job description: {job_description}
+
+                        Question-Answers:\n{interview_text}
+
+                        As an AI interview assistant, your task is to evaluate the quality and depth of the candidate's responses. Consider the following:
+
+                        Does the candidate provide detailed answers that demonstrate their understanding and expertise?
+                        Can you find tangible examples in their responses that relate to the job description?
+                        Does the candidate elaborate on how they have used necessary skills or experiences to overcome challenges or achieve results?
+                        Do the responses suggest the candidate has the ability to perform well in the role's complexities and challenges?
+                        If the candidate's responses are inadequate, vague, or don't clearly demonstrate the needed skills or experiences, they may not be a suitable match for the role. In such cases, tactfully communicate this by saying: "Thank you for your responses. However, based on the answers provided, it appears there may be a misalignment with the requirements of the role we're seeking to fill. At this time, we cannot extend an offer. We appreciate your time and effort and wish you the best in your future endeavors."
+
+                        If the responses indicate a strong fit for the role, then acknowledge the candidate's suitability by saying: "Thank you for your thoughtful responses. Based on your answers, it appears that your skills, experience, and understanding align well with the requirements of the role. We will be in touch with the next steps."
+                        """
+    # evaluation_prompt =  """Job description: {job_description}\n\nQuestion-Answers:\n{interview_text}\n\nAs an AI interview assistant, you have been tasked to evaluate the candidate's responses. Based on the answers provided, determine whether the candidate is suitable for the role specified in the job description. Bear in mind to gauge the authenticity and completeness of their responses. If any inaccuracies or significant omissions are observed, you have to reject the candidate tactfully and you have to say the words "Sorry, we can not hire you.", ensuring your communication remains courteous and respectful. """
+    
+    
     job_description = """
                         Job description of advertised OpenAI Technical Expert / Data Scientist position:
 
