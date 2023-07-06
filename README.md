@@ -79,7 +79,7 @@ Remember to replace `<your secret key>` with your actual OpenAI API Key.
 
 ## Directory Tree
 ```
-├── templates
+├── images
 │   ├── openai.png
 │   ├── streamlit.jpg
 ├── .gitignore
