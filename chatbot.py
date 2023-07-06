@@ -53,7 +53,7 @@ class InterviewBot:
         return response
 
 # Creating the chatbot interface
-st.title("InterviewBot")
+st.title("InterviewBot - AI Interview Chatbot")
 
 bot = InterviewBot()
 

@@ -57,18 +57,22 @@ streamlit run chatbot.py
 
 ## Directory Tree
 ```
-.
+├── templates
+│   ├── openai.png
+│   ├── streamlit.jpg
+├── .gitignore
 ├── chatbot.py
+├── config.py
 ├── utils.py
 ├── requirements.txt
 └── README.md
 ```
 
 ## Bug / Feature Request
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/YOUR_USERNAME/PROJECT/issues/new) by including your search query and the expected result.
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/nehalvaghasiya/interview-bot/issues/new) by including your search query and the expected result.
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/YOUR_USERNAME/PROJECT/issues/new). Please include sample queries and their corresponding results.
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/nehalvaghasiya/interview-bot/issues/new). Please include sample queries and their corresponding results.
 
 ## Technologies Used
 
-![Streamlit](https://www.streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png) ![OpenAI](https://upload.wikimedia.org/wikipedia/commons/5/51/OpenAI_logo.png)
+![Streamlit](images/streamlit.jpg) ![OpenAI](images/openai.png)
