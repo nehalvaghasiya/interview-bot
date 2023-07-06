@@ -75,4 +75,5 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ## Technologies Used
 
-![Streamlit](images/streamlit.jpg) ![OpenAI](images/openai.png)
+<img src="images/streamlit.jpg" width="125"/> <img src="images/openai.png" width="125"/>
+
