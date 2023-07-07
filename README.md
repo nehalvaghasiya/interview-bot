@@ -12,7 +12,7 @@
 ## Overview
 This project is an Interview Chatbot created using OpenAI's GPT-3.5 and the Streamlit framework. The chatbot generates job-specific interview questions and evaluates the candidate's responses. This is achieved using a sequence of prompts that leverage the language model's capabilities in creating questions and evaluating responses.
 
-<video src="images/Interview-bot-Video.mkv"></video>
+<video src="https://github.com/nehalvaghasiya/interview-bot/blob/master/images/Interview-bot-Video.mkv"></video>
 
 ## Technical Aspect
 The Interview Chatbot project is primarily divided into two parts:
