@@ -10,7 +10,7 @@
 - Technologies Used
 
 ## Overview
-This project is an Interview Chatbot created using OpenAI's GPT-4 and the Streamlit framework. The chatbot generates job-specific interview questions and evaluates the candidate's responses. This is achieved using a sequence of prompts that leverage the language model's capabilities in creating questions and evaluating responses.
+This project is an Interview Chatbot created using OpenAI's GPT-3.5 and the Streamlit framework. The chatbot generates job-specific interview questions and evaluates the candidate's responses. This is achieved using a sequence of prompts that leverage the language model's capabilities in creating questions and evaluating responses.
 
 ## Technical Aspect
 The Interview Chatbot project is primarily divided into two parts:
@@ -79,7 +79,7 @@ Remember to replace `<your secret key>` with your actual OpenAI API Key.
 
 ## Directory Tree
 ```
-├── templates
+├── images
 │   ├── openai.png
 │   ├── streamlit.jpg
 ├── .gitignore
@@ -97,4 +97,4 @@ If you'd like to request a new function, feel free to do so by opening an issue 
 
 ## Technologies Used
 
-<img src="images/openai.png" width="125"/><img src="images/streamlit.jpg" width="200"/> 
+<img src="images/openai.png" width="125"/><img src="images/streamlit.jpg" width="210"/> 
