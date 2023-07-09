@@ -5,9 +5,9 @@ class Parameters:
 
     MODEL = "gpt-3.5-turbo"  # OpenAI model name
 
-    questions_prompt = "Job description: {job_description}\nBased on the given job description, kindly formulate five relevant interview questions with max 20 words each. These questions should aim to assess the candidate's competency for the job role. Ask one question at a time. Do not generate unnecessary texts except the questions. "
+    QUESTIONS_PROMPT = "Job description: {job_description}\nBased on the given job description, kindly formulate five relevant interview questions with max 20 words each. These questions should aim to assess the candidate's competency for the job role. Ask one question at a time. Do not generate unnecessary texts except the questions. "
     
-    evaluation_prompt = """
+    EVALUATION_PROMPT = """
                         Job description: {job_description}
 
                         Question-Answers:\n{interview_text}
@@ -23,7 +23,7 @@ class Parameters:
                         If the responses indicate a strong fit for the role, then acknowledge the candidate's suitability by saying: "Thank you for your thoughtful responses. Based on your answers, it appears that your skills, experience, and understanding align well with the requirements of the role. We will be in touch with the next steps."
                         """    
     
-    job_description = """
+    JOB_DESCRIPTION = """
                         Job description of advertised OpenAI Technical Expert / Data Scientist position:
 
                         TASKS:

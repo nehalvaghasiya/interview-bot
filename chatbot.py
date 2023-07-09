@@ -32,7 +32,7 @@ class InterviewBot:
         then processes the returned string to extract individual questions. These questions are stored
         in the session state along with a unique identifier for each question.
         """
-        concatenated_questions = get_completion(Parameters.questions_prompt.format(job_description=Parameters.job_description))
+        concatenated_questions = get_completion(Parameters.QUESTIONS_PROMPT.format(job_description=Parameters.JOB_DESCRIPTION))
 
         questions = get_questions(concatenated_questions)
 
@@ -74,7 +74,7 @@ class InterviewBot:
         """
         interview_text = "".join([f"Question: {question}\nAnswer: {answer}\n" for (question, _), (answer, _) in zip(self.session_state['questions'], self.session_state['answers'])])
         
-        response = get_completion(Parameters.evaluation_prompt.format(job_description=Parameters.job_description, interview_text=interview_text))
+        response = get_completion(Parameters.EVALUATION_PROMPT.format(job_description=Parameters.JOB_DESCRIPTION, interview_text=interview_text))
 
         return response
 
@@ -115,7 +115,7 @@ def create_bot() -> None:
     if len(bot.session_state['questions']) == 0:
         message("Hello! I'm your interviewer bot powered by OpenAI. I will ask you a few questions, and your responses will be evaluated. Let's get started.", key="greeting")
         bot.prepare_questions()
-        
+
     bot.execute_interview()
 
 
