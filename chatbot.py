@@ -1,8 +1,12 @@
 import uuid
 import streamlit as st
+from dotenv import load_dotenv
 from streamlit_chat import message
 from utils import get_completion, get_questions
 from config import Parameters
+
+# Load environment variables from .env file
+load_dotenv()
 
 class InterviewBot:
     """
@@ -54,7 +58,7 @@ class InterviewBot:
         if answer:
             self.session_state['answers'].append((answer, self._generate_uuid()))
             self.session_state['interview_step'] += 1
-            st.experimental_rerun()
+            st.rerun()
 
     def display_past_questions_and_answers(self) -> None:
         """

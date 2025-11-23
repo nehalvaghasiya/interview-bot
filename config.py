@@ -1,9 +1,16 @@
+import os
+
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
 class Parameters:
     """
     Configurable parameters for the application.
     """
 
-    MODEL = "gpt-3.5-turbo"  # OpenAI model name
+    MODEL = os.environ.get("OPENAI_MODEL", "gpt-4o-mini")  # OpenAI model name - configurable via environment variable
 
     QUESTIONS_PROMPT = "Job description: {job_description}\nBased on the given job description, kindly formulate five relevant interview questions with max 20 words each. These questions should aim to assess the candidate's competency for the job role. Ask one question at a time. Do not generate unnecessary texts except the questions. "
     
