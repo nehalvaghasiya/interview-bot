@@ -235,9 +235,17 @@ pip install -r requirements.txt
 
 #### API Connection Errors
 
+**For OpenAI:**
 - Verify your `.env` file exists and contains valid credentials
 - Check that `OPENAI_API_KEY` is set correctly
 - Ensure `OPENAI_BASE_URL` is accessible from your network
+
+**For Ollama:**
+- Ensure Ollama is running: `ollama serve` (or check if it's running as a service)
+- Verify the model is installed: `ollama list`
+- Pull the model if missing: `ollama pull llama3.2`
+- Check Ollama is accessible: `curl http://localhost:11434/api/tags`
+- Verify `OLLAMA_BASE_URL` points to the correct endpoint
 
 #### Model Not Found Error
 
