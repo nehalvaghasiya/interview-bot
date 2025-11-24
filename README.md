@@ -312,6 +312,23 @@ If you'd like to request a new feature, open an issue [here](https://github.com/
 <img src="images/openai.png" width="125"/><img src="images/streamlit.jpg" width="210"/> 
 
 - **OpenAI API** - GPT-4o-mini and other models for question generation and evaluation
+- **Ollama** - Local LLM support (Llama 3.2, Mistral, Qwen, and more)
 - **Streamlit** - Web framework for the interactive chat interface
 - **Python-dotenv** - Environment variable management
 - **uv** - Fast Python package manager
+
+### Supported LLM Providers
+
+#### OpenAI
+- Cloud-based API
+- High-quality responses
+- Requires API key and costs per token
+- Models: GPT-4o, GPT-4o-mini, GPT-4-turbo, GPT-3.5-turbo
+
+#### Ollama
+- Run models locally on your machine
+- Free and private
+- No internet required after model download
+- Popular models: Llama 3.2, Llama 3.1, Mistral, Qwen 2.5, Phi-3
+- Learn more: [ollama.ai](https://ollama.ai)
+
