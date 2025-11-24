@@ -249,9 +249,31 @@ pip install -r requirements.txt
 
 #### Model Not Found Error
 
-If you get a "model not found" error:
+**For OpenAI:**
 - Update the `OPENAI_MODEL` in your `.env` file to a model available in your account
 - Common models: `gpt-4o-mini`, `gpt-4o`, `gpt-4-turbo`, `gpt-4`
+
+**For Ollama:**
+- List available models: `ollama list`
+- Pull the desired model: `ollama pull <model-name>`
+- Popular models: `llama3.2`, `llama3.1`, `mistral`, `qwen2.5`, `phi3`
+- Update `OLLAMA_MODEL` in `.env` to match an installed model
+
+#### Ollama-Specific Issues
+
+**Ollama not responding:**
+```bash
+# Check if Ollama is running
+ps aux | grep ollama
+
+# Start Ollama
+ollama serve
+```
+
+**Slow responses with Ollama:**
+- Local models require sufficient RAM and compute
+- Consider using smaller models: `phi3`, `llama3.2:1b`
+- Or faster models: `qwen2.5:3b`, `mistral`
 
 #### Streamlit Errors
 
