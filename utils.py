@@ -4,15 +4,31 @@ import os
 from typing import List
 from config import Parameters
 
-def get_completion(complete_prompt: str) -> str:
+def get_llm_client() -> OpenAI:
     """
-    Send a message to the OpenAI API to get a response.
+    Get the appropriate LLM client based on the provider configuration.
+    Supports both OpenAI and Ollama.
     """
-    try:
-        client = OpenAI(
+    provider = os.environ.get("LLM_PROVIDER", "openai").lower()
+    
+    if provider == "ollama":
+        return OpenAI(
+            api_key=os.environ.get("OLLAMA_API_KEY", "ollama"),
+            base_url=os.environ.get("OLLAMA_BASE_URL", "http://localhost:11434/v1")
+        )
+    else:
+        # Default to OpenAI
+        return OpenAI(
             api_key=os.environ.get("OPENAI_API_KEY"),
             base_url=os.environ.get("OPENAI_BASE_URL")
         )
+
+def get_completion(complete_prompt: str) -> str:
+    """
+    Send a message to the LLM API (OpenAI or Ollama) to get a response.
+    """
+    try:
+        client = get_llm_client()
         messages = [{"role": "user", "content": complete_prompt}]
         response = client.chat.completions.create(
             model=Parameters.MODEL,

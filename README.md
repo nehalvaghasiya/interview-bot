@@ -45,8 +45,11 @@ The project uses OpenAI's API with support for custom base URLs, making it compa
    cp .env.example .env
    ```
 
-2. Edit the `.env` file with your OpenAI API credentials:
+2. **Choose your LLM provider** - Edit the `.env` file:
+
+   **Option A: Using OpenAI**
    ```env
+   LLM_PROVIDER=openai
    OPENAI_API_KEY=your_actual_api_key_here
    OPENAI_BASE_URL=https://api.openai.com/v1
    OPENAI_MODEL=gpt-4o-mini
@@ -55,6 +58,19 @@ The project uses OpenAI's API with support for custom base URLs, making it compa
    - Replace `your_actual_api_key_here` with your actual OpenAI API key
    - Update `OPENAI_BASE_URL` if using a custom OpenAI-compatible endpoint
    - Change `OPENAI_MODEL` to use a different model (e.g., `gpt-4`, `gpt-4-turbo`)
+
+   **Option B: Using Ollama (Local/Free)**
+   ```env
+   LLM_PROVIDER=ollama
+   OLLAMA_BASE_URL=http://localhost:11434/v1
+   OLLAMA_MODEL=llama3.2
+   OLLAMA_API_KEY=ollama
+   ```
+   
+   - Install Ollama from [ollama.ai](https://ollama.ai)
+   - Pull a model: `ollama pull llama3.2` (or `llama3.1`, `mistral`, `qwen2.5`, etc.)
+   - Start Ollama: `ollama serve` (usually runs automatically)
+   - Change `OLLAMA_MODEL` to any model you have pulled
 
 ### Installation Methods
 
@@ -144,11 +160,17 @@ class Parameters:
 
 ### Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OPENAI_API_KEY` | Your OpenAI API key | Required |
-| `OPENAI_BASE_URL` | API base URL | `https://api.openai.com/v1` |
-| `OPENAI_MODEL` | Model to use | `gpt-4o-mini` |
+| Variable | Description | Default | Required |
+|----------|-------------|---------|----------|
+| `LLM_PROVIDER` | LLM provider to use (`openai` or `ollama`) | `openai` | Yes |
+| **OpenAI Settings** | | | |
+| `OPENAI_API_KEY` | Your OpenAI API key | - | If using OpenAI |
+| `OPENAI_BASE_URL` | OpenAI API base URL | `https://api.openai.com/v1` | No |
+| `OPENAI_MODEL` | OpenAI model name | `gpt-4o-mini` | No |
+| **Ollama Settings** | | | |
+| `OLLAMA_BASE_URL` | Ollama API base URL | `http://localhost:11434/v1` | No |
+| `OLLAMA_MODEL` | Ollama model name | `llama3.2` | No |
+| `OLLAMA_API_KEY` | Placeholder (Ollama doesn't need real key) | `ollama` | No |
 
 ## Examples
 
@@ -213,15 +235,45 @@ pip install -r requirements.txt
 
 #### API Connection Errors
 
+**For OpenAI:**
 - Verify your `.env` file exists and contains valid credentials
 - Check that `OPENAI_API_KEY` is set correctly
 - Ensure `OPENAI_BASE_URL` is accessible from your network
 
+**For Ollama:**
+- Ensure Ollama is running: `ollama serve` (or check if it's running as a service)
+- Verify the model is installed: `ollama list`
+- Pull the model if missing: `ollama pull llama3.2`
+- Check Ollama is accessible: `curl http://localhost:11434/api/tags`
+- Verify `OLLAMA_BASE_URL` points to the correct endpoint
+
 #### Model Not Found Error
 
-If you get a "model not found" error:
+**For OpenAI:**
 - Update the `OPENAI_MODEL` in your `.env` file to a model available in your account
 - Common models: `gpt-4o-mini`, `gpt-4o`, `gpt-4-turbo`, `gpt-4`
+
+**For Ollama:**
+- List available models: `ollama list`
+- Pull the desired model: `ollama pull <model-name>`
+- Popular models: `llama3.2`, `llama3.1`, `mistral`, `qwen2.5`, `phi3`
+- Update `OLLAMA_MODEL` in `.env` to match an installed model
+
+#### Ollama-Specific Issues
+
+**Ollama not responding:**
+```bash
+# Check if Ollama is running
+ps aux | grep ollama
+
+# Start Ollama
+ollama serve
+```
+
+**Slow responses with Ollama:**
+- Local models require sufficient RAM and compute
+- Consider using smaller models: `phi3`, `llama3.2:1b`
+- Or faster models: `qwen2.5:3b`, `mistral`
 
 #### Streamlit Errors
 
@@ -260,6 +312,23 @@ If you'd like to request a new feature, open an issue [here](https://github.com/
 <img src="images/openai.png" width="125"/><img src="images/streamlit.jpg" width="210"/> 
 
 - **OpenAI API** - GPT-4o-mini and other models for question generation and evaluation
+- **Ollama** - Local LLM support (Llama 3.2, Mistral, Qwen, and more)
 - **Streamlit** - Web framework for the interactive chat interface
 - **Python-dotenv** - Environment variable management
 - **uv** - Fast Python package manager
+
+### Supported LLM Providers
+
+#### OpenAI
+- Cloud-based API
+- High-quality responses
+- Requires API key and costs per token
+- Models: GPT-4o, GPT-4o-mini, GPT-4-turbo, GPT-3.5-turbo
+
+#### Ollama
+- Run models locally on your machine
+- Free and private
+- No internet required after model download
+- Popular models: Llama 3.2, Llama 3.1, Mistral, Qwen 2.5, Phi-3
+- Learn more: [ollama.ai](https://ollama.ai)
+
