@@ -160,11 +160,17 @@ class Parameters:
 
 ### Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OPENAI_API_KEY` | Your OpenAI API key | Required |
-| `OPENAI_BASE_URL` | API base URL | `https://api.openai.com/v1` |
-| `OPENAI_MODEL` | Model to use | `gpt-4o-mini` |
+| Variable | Description | Default | Required |
+|----------|-------------|---------|----------|
+| `LLM_PROVIDER` | LLM provider to use (`openai` or `ollama`) | `openai` | Yes |
+| **OpenAI Settings** | | | |
+| `OPENAI_API_KEY` | Your OpenAI API key | - | If using OpenAI |
+| `OPENAI_BASE_URL` | OpenAI API base URL | `https://api.openai.com/v1` | No |
+| `OPENAI_MODEL` | OpenAI model name | `gpt-4o-mini` | No |
+| **Ollama Settings** | | | |
+| `OLLAMA_BASE_URL` | Ollama API base URL | `http://localhost:11434/v1` | No |
+| `OLLAMA_MODEL` | Ollama model name | `llama3.2` | No |
+| `OLLAMA_API_KEY` | Placeholder (Ollama doesn't need real key) | `ollama` | No |
 
 ## Examples
 
