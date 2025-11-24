@@ -45,8 +45,11 @@ The project uses OpenAI's API with support for custom base URLs, making it compa
    cp .env.example .env
    ```
 
-2. Edit the `.env` file with your OpenAI API credentials:
+2. **Choose your LLM provider** - Edit the `.env` file:
+
+   **Option A: Using OpenAI**
    ```env
+   LLM_PROVIDER=openai
    OPENAI_API_KEY=your_actual_api_key_here
    OPENAI_BASE_URL=https://api.openai.com/v1
    OPENAI_MODEL=gpt-4o-mini
@@ -55,6 +58,19 @@ The project uses OpenAI's API with support for custom base URLs, making it compa
    - Replace `your_actual_api_key_here` with your actual OpenAI API key
    - Update `OPENAI_BASE_URL` if using a custom OpenAI-compatible endpoint
    - Change `OPENAI_MODEL` to use a different model (e.g., `gpt-4`, `gpt-4-turbo`)
+
+   **Option B: Using Ollama (Local/Free)**
+   ```env
+   LLM_PROVIDER=ollama
+   OLLAMA_BASE_URL=http://localhost:11434/v1
+   OLLAMA_MODEL=llama3.2
+   OLLAMA_API_KEY=ollama
+   ```
+   
+   - Install Ollama from [ollama.ai](https://ollama.ai)
+   - Pull a model: `ollama pull llama3.2` (or `llama3.1`, `mistral`, `qwen2.5`, etc.)
+   - Start Ollama: `ollama serve` (usually runs automatically)
+   - Change `OLLAMA_MODEL` to any model you have pulled
 
 ### Installation Methods
 
